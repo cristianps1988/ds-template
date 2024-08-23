@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { babel } from '@rollup/plugin-babel';
+import css from "rollup-plugin-import-css";
 
 // This is required to read package.json file when
 // using Native ES modules in Node.js
@@ -28,6 +29,7 @@ export default [
       },
     ],
     plugins: [
+      css(),
       peerDepsExternal(),
       resolve({
         extensions: ['.js', '.jsx'],
