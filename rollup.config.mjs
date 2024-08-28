@@ -31,7 +31,9 @@ export default [
       },
     ],
     plugins: [
-      css(),
+      css({
+        output: 'dist/styles.css',
+      }),
       peerDepsExternal(),
       resolve({
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
@@ -45,7 +47,7 @@ export default [
         babelHelpers: 'bundled',
       }),
     ],
-    external: ['react', 'react-dom', '@emotion/react', '@emotion/styled'],
+    external: ['react', 'react-dom'],
   },
   {
     input: 'dist/esm/types/index.d.ts',
