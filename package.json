@@ -20,7 +20,9 @@
     "build-storybook-docs": "storybook build  --docs",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "postbuild": "cp dist/styles.css dist/index.css"
+    "postbuild": "cp dist/esm/index.css dist/index.css",
+    "lint": "eslint --ext js,ts --fix",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -45,7 +47,10 @@
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^8.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.2.1",
     "postcss": "^8.4.41",
     "postcss-import": "^16.1.0",
@@ -61,7 +66,8 @@
     "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^8.2.9",
     "typescript": "^5.5.4",
-    "vite": "^5.4.2"
+    "vite": "^5.4.2",
+    "husky": "^8.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
